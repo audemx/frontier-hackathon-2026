@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+*.pem
+*.key
+
+# Local databases
+*.db
+*.sqlite
+*.duckdb
+.chroma/
+
+# System files / IDE
+.DS_Store
+.vscode/
+.idea/
+node_modules/

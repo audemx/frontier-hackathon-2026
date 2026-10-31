@@ -1,0 +1,1 @@
+print("Hello World from frontier-hackathon-2026")
