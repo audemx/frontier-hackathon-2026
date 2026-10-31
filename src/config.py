@@ -16,7 +16,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # API Keys and URLs
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-FUENTES_URL = os.getenv("FUENTES_URL", "https://reto-pii-fuentes-production.up.railway.app/v1")
+FUENTES_URL = os.getenv("FUENTES_URL")
 FUENTES_TOKEN = os.getenv("FUENTES_TOKEN", "")
 
 # Default LLM model for contextual processing

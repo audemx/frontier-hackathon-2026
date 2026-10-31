@@ -21,3 +21,21 @@
     * Generated `DECISIONS.md` responding to the 3 official evaluation criteria.
 
 * [2:30] - Validation: `node validar.mjs output/ --public fuentes/`.
+* [2:35] - Run data exploration and system design tests.
+    * Sample data exploration via `notebooks/exploracion.ipynb`.
+    * System evaluation tests via `notebooks/test.ipynb`.
+* [2:40] - Commit Changes
+    * arch: src and notebooks test completed.
+
+* [2:45] - Launch massive processing (POST /run).
+    * `curl -X POST "http://localhost:8000/run" \
+        -H "Content-Type: application/json" \
+        -d '{
+            "sources_url": "https://reto-pii-fuentes-production.up.railway.app/v1",
+            "token": "TOKEN_DE_EQUIPO"
+        }'`
+    * Watching state via POST /run/{id}: 
+        `curl -s http://localhost:8000/run/JOB_ID | json_pp`
+    * Downloading completed.
+
+* [3:20] - Run massive processing `node frontier-reto-1/validar.mjs output/ --public sample`.

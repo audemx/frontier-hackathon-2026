@@ -534,16 +534,13 @@ class EntityManager:
                         )
             if email:
                 clean_email = email.strip()
-                self.conn.execute(
-                    "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'email')",
-                    (eid, clean_email),
-                )
+                self.conn.execute("INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'email')", (eid, clean_email))
                 u_part = clean_email.split("@")[0]
                 if len(u_part) >= 3:
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'username')",
-                        (eid, u_part),
-                    )
+                    # Registrar el handle exacto (ej. tperez)
+                    self.conn.execute("INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'username')", (eid, u_part))
+                    # Registrar variantes con punto o sin punto por si acaso
+                    self.conn.execute("INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'username')", (eid, u_part.replace(".", "")))
             if phone:
                 clean_p = re.sub(r"\D", "", phone)
                 self.conn.execute(
@@ -820,7 +817,10 @@ class AnonymizationEngine:
         items = self.em.get_all_originals_sorted()
         matchers = []
         for orig, vtype, eid, pseud_val, is_kept in items:
-            esc = re.escape(orig)
+            if len(orig.strip()) < 3:
+                continue
+            esc = re.escape(orig.strip())
+            # Patrón robusto case-insensitive
             pattern_str = rf"(?i)(?<![a-zA-Z0-9]){esc}(?![a-zA-Z0-9])"
             try:
                 rx = re.compile(pattern_str)
@@ -926,6 +926,44 @@ class AnonymizationEngine:
                 self.em.mark_pseudonym_used(eid, "name")
 
         return f"{anonymized_name}{ext}"
+
+# -----------------------------------------------------------------------------
+# Anti-fugas de PII
+# -----------------------------------------------------------------------------
+
+def validate_no_pii_leaks(em: EntityManager, all_output_records: Dict[str, Dict[str, Any]]):
+    """
+    Guardrail programático: Escanea todos los registros de salida contra 
+    los valores originales de personas para detectar fugas de PII en tiempo de ejecución.
+    """
+    logger.info("Ejecutando guardrail de validación anti-fugas...")
+    cur = em.conn.cursor()
+    
+    # Obtener todos los originales de personas (kept = 0)
+    cur.execute("""
+        SELECT o.original_value, e.entity_id 
+        FROM entity_originals o
+        JOIN entities e ON o.entity_id = e.entity_id
+        WHERE e.kept = 0 AND LENGTH(o.original_value) >= 4
+    """)
+    originals = cur.fetchall()
+    
+    leaks_found = 0
+    for row in originals:
+        orig = row["original_value"]
+        eid = row["entity_id"]
+        
+        # Escanear en cada registro generado en la salida
+        for rec_id, rec in all_output_records.items():
+            rec_text = record_text_content(rec)
+            if contiene(rec_text, orig):
+                logger.error(f"¡FUGA DETECTADA! El valor original '{orig}' (Entity: {eid}) sigue presente en el registro {rec_id}")
+                leaks_found += 1
+
+    if leaks_found > 0:
+        raise RuntimeError(f"¡El pipeline se detuvo por seguridad! Se detectaron {leaks_found} fugas de PII en la salida.")
+    else:
+        logger.info("¡Guardrail superado con éxito! Cero fugas de PII detectadas en los textos de salida.")
 
 
 # -----------------------------------------------------------------------------
@@ -1359,6 +1397,8 @@ def run_pipeline(
                     f_chats.write(json.dumps(chat_rec, ensure_ascii=False) + "\n")
                     all_output_records[msg_id] = chat_rec
                     chats_count += 1
+
+    validate_no_pii_leaks(em, all_output_records)
 
     # Export entities.json passing all_output_records for strict containment validation
     logger.info("Writing entities.json...")
