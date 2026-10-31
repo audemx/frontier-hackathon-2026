@@ -1,0 +1,56 @@
+.
+├── data
+├── docs
+│   ├── adrs
+│   ├── logs.md
+│   ├── peech.md
+│   ├── project.md
+│   ├── prompt_design.md
+│   └── system-design.md
+├── frontier-reto-1
+│   ├── api
+│   │   ├── fuentes.openapi.yaml
+│   │   └── participante.openapi.yaml
+│   ├── ENUNCIADO.md
+│   ├── README.md
+│   └── validar.mjs
+├── init.sh
+├── notebooks
+│   └── 01_exploracion.ipynb
+├── README.md
+├── requirements.txt
+├── run.sh
+├── sample
+│   ├── expected_output
+│   │   ├── chats.jsonl
+│   │   ├── docs.jsonl
+│   │   ├── entities.json
+│   │   └── tables.jsonl
+│   ├── input
+│   │   ├── chats
+│   │   │   ├── channels.json
+│   │   │   ├── README.txt
+│   │   │   ├── soporte-cobros
+│   │   │   │   └── 2026-08-03.json
+│   │   │   └── users.json
+│   │   ├── docs
+│   │   │   ├── index.json
+│   │   │   └── memo_cierre_julio.md
+│   │   └── tables
+│   │       ├── clientes.csv
+│   │       └── README.txt
+│   ├── README.md
+│   ├── record_index.json
+│   └── tests_sample.json
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   └── main.cpython-312.pyc
+│   ├── agent.py
+│   ├── config.py
+│   ├── main.py
+│   └── pipeline.py
+└── tree.txt
+
+16 directories, 38 files

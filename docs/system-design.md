@@ -64,44 +64,51 @@ The pipeline produces the mandatory four output files in `output/`:
 
 ### `src/config.py`
 
-- **Responsibility:** Manages environment variables (`OPENROUTER_API_KEY`), configures OpenRouter client endpoints, and defines project path defaults.
+* **Responsibility:** Manages secure environment variables (`OPENROUTER_API_KEY`, `FUENTES_TOKEN`), configures OpenRouter client endpoints, and defines project path defaults.
 
 ### `src/pipeline.py`
 
-- **Responsibility:** The core transformation and extraction engine.
-  1. **Ingestion & Parsing:** Pulls data from the source API (`/v1`) using token authorization, handling Latin-1/UTF-8 charsets and custom separators.
-  2. **Deterministic Regex Sweeper:** Instantly catches structured PII (emails, spelled-out email variants like *"user AT domain"*, passport numbers, vehicle plates, cédula ID formats).
-  3. **Contextual LLM Extraction:** Feeds complex or ambiguous text fragments (Slack messages, PDF metadata, HTML comments) to an efficient LLM (`google/gemini-2.0-flash-001`) via OpenRouter with strict prompt instructions to flag compound identifiers and generalize quasi-identifiers (e.g., neighborhood + occupation + year).
-  4. **Stateful Entity Resolution:** Queries and updates `data/entity_map.db` to guarantee consistent pseudonym assignment across historical runs and incremental source updates.
+* **Responsibility:** Ingests raw files, processes them through the robust privacy pipeline, and updates state.
+  1. **Ingestion & Parsing:** Pulls data from the source API handling Latin-1/UTF-8 charsets and custom separators.
+  2. **Layer 1 (Regex Sweeper - Anti-Evasion):** Instantly catches rigid structures, including spelling-out tricks used by users (e.g., *"usuario AT gmail PUNTO com"*), Colombian cédulas, passbook numbers, and vehicle plates.
+  3. **Layer 2 (Contextual LLM Extraction):** Processes complex text fragments and compound identifiers (*neighborhood + occupation + year*) using an efficient LLM via OpenRouter.
+  4. **Layer 3 (Post-Processing Guardrail):** A final regex verification sweep over generated texts. If any real entity pattern slips through, it is programmatically scrubbed before writing to disk.
 
-### `src/main.py`
+### `src/main.py` (FastAPI Service)
 
-- **Responsibility:** FastAPI web application exposing the complete participant API contract (`api/participante.openapi.yaml`):
-  * `GET /health`: Returns service health status, team name, version, and active models.
-  * `POST /run`: Triggers asynchronous full corpus regeneration from the source API into `output/` (SLA $< 2$ hours).
-  * `GET /run/{job_id}`: Reports execution status (`queued`, `running`, `done`, `failed`), record counts, and token/time costs.
-  * `GET /output/{archivo}`: Serves generated jsonl/json files (`chats.jsonl`, `docs.jsonl`, `tables.jsonl`, `entities.json`).
-  * `POST /anonymize`: Processes incoming live batches of up to 50 records in $< 60$ seconds, guaranteeing consistent entity mapping against the local SQLite database.
-  * `GET /entities`: Exposes the full entity dictionary for auditing by the automated judge.
+* **Responsibility:** Exposes the participant API contract while enforcing strict security controls on file access and live endpoints.
 
+---
 
-## 4. Entity Resolution & Consistency Strategy
+## 4. Security & Privacy Measures
 
-To ensure strict compliance with the 20% consistency score and correct homonym handling:
+To guarantee that raw data and internal mappings remain completely secure:
 
-1. **Mapping Storage:** A local SQLite database (`data/entity_map.db`) stores cryptographic mappings:
-   `[unique_entity_fingerprint] -> [synthetic_profile]`
-   
-2. **Deterministic Rules:**
-   * **Homonym Separation:** Two distinct individuals sharing the name "Juan Pérez" generate unique entity fingerprints based on their underlying database IDs or contextual anchors, resulting in separate, unique synthetic profiles.
-   * **Global Consistency:** When sources grow or `/anonymize` receives new records in real time, existing entities instantly resolve to their previously assigned pseudonyms.
-   * **Preservation of Public Entities:** Organizations, places, brands, and public figures (e.g., Bancolombia, Carulla, Plaza Botero, Shakira) are explicitly marked as `kept: true` in `entities.json`.
+1. **Isolation of Raw Sources & State (`data/entity_map.db`):**
+   * Raw downloaded payloads and the local SQLite entity map reside in internal private directories.
+   * **File System Permissions:** Upon container startup or deployment, permissions on the SQLite database are explicitly locked down: `chmod 600 data/entity_map.db` (only the local Python process can read/write).
+   * **Zero Exposure via HTTP:** Raw source data and the entity mapping database are **never** exposed through any public endpoint.
 
+2. **Defense Against Directory Traversal on Output Endpoints:**
+   * The endpoint `GET /output/{archivo}` uses strict allow-listing (`chats.jsonl`, `docs.jsonl`, `tables.jsonl`, `entities.json`) combined with path sanitization (`os.path.basename`) to completely prevent path traversal attacks (e.g., trying to read `../../etc/passwd`).
 
-## 5. API Contracts & SLA Targets
+3. **Audit Compliance (`entities.json` & Confidentiality):**
+   * The complete entity dictionary (`entities.json`) contains the mapping between real entities and pseudonyms. It is kept entirely local and is served exclusively through the designated contract endpoint (`GET /entities`) for automated judging, never leaking to general buyers or external networks.
 
-- **Full Regeneration (`POST /run`):** Re-renders the complete dataset into `output/` in $< 2$ hours, maintaining exact schema keys and row counts matching `record_index.json`.
-- **Live Anonymization (`POST /anonymize`):**
-  * **Input Payload:** JSON object containing `source` and an array of up to 50 raw records.
-  * **Output Payload:** Strictly sanitized, pseudonymized records with identical schema IDs and corresponding entity metadata.
-  * **Latency Target:** Response time $< 60$ seconds per batch.
+---
+
+## 5. Public Deployment Strategy & How to Handle the Public URL
+
+The hackathon challenge requires your service to run on a **publicly accessible HTTP URL** so the automated evaluation runner can call `/health`, `/run`, `/output/{archivo}`, and `/anonymize`.
+
+### Recommended Deployment Setup:
+1. **Host on Railway, Render, or Fly.io:**
+   * Deploy your repository directly via Docker or Python runtime. These platforms instantly provide a secure, persistent public HTTPS URL (e.g., `https://your-service.up.railway.app`).
+   * Configure your environment variables (`OPENROUTER_API_KEY`, `FUENTES_TOKEN`) securely in the platform's dashboard settings.
+2. **Register in Frontier:**
+   * Copy your public URL and paste it into `/evento/reto` in Frontier to trigger the validation and evaluation runs.
+
+### Securing the Public API Service:
+* As defined in the participant OpenAPI spec (`api/participante.openapi.yaml`), the evaluator connects without user-level headers on certain data endpoints. We protect the service through:
+  * **Pydantic Validation:** Strict payload schemas on `POST /anonymize` to reject malformed or malicious inputs instantly.
+  * **Asynchronous Job Management:** `POST /run` generates secure cryptographic UUID `job_id` strings to track batch regenerations, ensuring no state leakage between runs.

@@ -1,0 +1,404 @@
+{
+  "entities": [
+    {
+      "entity_id": "kept_001",
+      "type": "organization_or_place",
+      "originals": [
+        "Bancolombia"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_002",
+      "type": "organization_or_place",
+      "originals": [
+        "Superfinanciera"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_003",
+      "type": "organization_or_place",
+      "originals": [
+        "Nequi"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_004",
+      "type": "organization_or_place",
+      "originals": [
+        "Daviplata"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_005",
+      "type": "organization_or_place",
+      "originals": [
+        "Davivienda"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_006",
+      "type": "organization_or_place",
+      "originals": [
+        "Banco de Bogotá"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_007",
+      "type": "organization_or_place",
+      "originals": [
+        "Banco de Occidente"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_008",
+      "type": "organization_or_place",
+      "originals": [
+        "Santander"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_009",
+      "type": "organization_or_place",
+      "originals": [
+        "BBVA"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_010",
+      "type": "organization_or_place",
+      "originals": [
+        "PSE"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_011",
+      "type": "organization_or_place",
+      "originals": [
+        "Rappi"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_012",
+      "type": "organization_or_place",
+      "originals": [
+        "Nutresa"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_013",
+      "type": "organization_or_place",
+      "originals": [
+        "Andes Capital"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_014",
+      "type": "organization_or_place",
+      "originals": [
+        "Carulla"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_015",
+      "type": "organization_or_place",
+      "originals": [
+        "Éxito"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_016",
+      "type": "organization_or_place",
+      "originals": [
+        "Plaza Botero"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_017",
+      "type": "organization_or_place",
+      "originals": [
+        "Shakira"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_018",
+      "type": "organization_or_place",
+      "originals": [
+        "Transmilenio"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_019",
+      "type": "organization_or_place",
+      "originals": [
+        "Metro de Medellín"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_020",
+      "type": "organization_or_place",
+      "originals": [
+        "Kipu Pay"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "kept_021",
+      "type": "organization_or_place",
+      "originals": [
+        "Kipu"
+      ],
+      "pseudonyms": {},
+      "kept": true,
+      "reason": "organización, lugar, marca o figura pública; no es persona natural",
+      "records": []
+    },
+    {
+      "entity_id": "p_001",
+      "type": "person",
+      "originals": [
+        "+57 310 612 8485",
+        "1982-04-07",
+        "3106128485",
+        "32.390.356",
+        "32390356",
+        "Calle 98 Bis # 91-10 of 406",
+        "Nohora",
+        "Nohora Salazar",
+        "Nohora Salazar Ramírez",
+        "U038D7A4F",
+        "nohora_salazar",
+        "nohora_salazar_ramirez",
+        "nsalazar",
+        "nsalazar@gmail.com"
+      ],
+      "pseudonyms": {
+        "name": "Lucía Rodríguez",
+        "email": "lrodriguez@hotmail.com",
+        "address": "Diagonal 18 # 24-30"
+      },
+      "records": [
+        "5eb0e9a6-fb79-5de9-8170-6d055433f6e6",
+        "clientes:CL-19127",
+        "sdoc_01"
+      ]
+    },
+    {
+      "entity_id": "p_002",
+      "type": "person",
+      "originals": [
+        "+57 313 306 4112",
+        "1978-12-13",
+        "3133064112",
+        "63.263.076",
+        "63263076",
+        "Alejandra",
+        "Alejandra Castaño",
+        "Alejandra Castaño Mejía",
+        "Transversal 24 Bis # 91-97",
+        "U0AZ2N02X",
+        "acastano",
+        "acastano@gmail.com",
+        "alejandra_castano",
+        "alejandra_castano_mejia"
+      ],
+      "pseudonyms": {
+        "name": "Liliana Díaz",
+        "email": "ldiaz@outlook.com",
+        "address": "Diagonal 35 # 47-59"
+      },
+      "records": [
+        "clientes:CL-72856"
+      ]
+    },
+    {
+      "entity_id": "p_003",
+      "type": "person",
+      "originals": [
+        "+57 314 872 9552",
+        "1.107.360.039",
+        "1107360039",
+        "1997-07-23",
+        "3148729552",
+        "Diagonal 3A # 78-6 apto 1501",
+        "Manuela",
+        "Manuela Castaño",
+        "Manuela Castaño Ruiz",
+        "U0V6WYVYG",
+        "manuela_castano",
+        "manuela_castano_ruiz",
+        "mcastano",
+        "mcastano@gmail.com"
+      ],
+      "pseudonyms": {
+        "name": "Gloria Romero",
+        "email": "gromero@icloud.com",
+        "address": "Diagonal 52 # 70-88"
+      },
+      "records": [
+        "05004714-695f-52be-a0a9-c39224133858",
+        "4e704abc-9da7-5ce6-8744-80fa0d699110",
+        "5eb0e9a6-fb79-5de9-8170-6d055433f6e6",
+        "clientes:CL-19127",
+        "clientes:CL-88627",
+        "d8a981c7-acae-5cf9-82f6-051144479154",
+        "fea922de-00f1-5c98-a036-4c7540983788",
+        "sdoc_01"
+      ]
+    },
+    {
+      "entity_id": "p_004",
+      "type": "person",
+      "originals": [
+        "+57 315 237 1239",
+        "1981-09-11",
+        "3152371239",
+        "94.184.267",
+        "94184267",
+        "Esteban",
+        "Esteban Darío",
+        "Esteban Darío Castaño Ospina",
+        "Tv 152B # 61-36 apto 802",
+        "U00SBZ0EZ",
+        "ecastano",
+        "ecastano@gmail.com",
+        "esteban_dario",
+        "esteban_dario_castano_ospina"
+      ],
+      "pseudonyms": {
+        "name": "Gonzalo Pineda",
+        "email": "gpineda@yahoo.com",
+        "address": "Diagonal 69 # 93-27"
+      },
+      "records": [
+        "clientes:CL-92356"
+      ]
+    },
+    {
+      "entity_id": "p_012",
+      "type": "person",
+      "originals": [
+        "+57 302 669 1564",
+        "3026691564",
+        "U0NB2029P",
+        "Yesenia",
+        "Yesenia Ramírez",
+        "Yesenia Ramírez Zapata",
+        "yesenia.ramirez",
+        "yesenia.ramirez@kipupay.co",
+        "yesenia_ramirez",
+        "yesenia_ramirez_zapata"
+      ],
+      "pseudonyms": {
+        "name": "Verónica Martínez"
+      },
+      "records": [
+        "09f5ec34-bd6b-5b30-96c4-67aecdbdae34",
+        "2d493256-cf41-55e8-9e5f-c4367f0d23f1",
+        "9e0e0572-3746-5a1a-ba83-560a64bdddbe",
+        "bdde8eb9-65e1-5e72-a62a-de5618195dcc"
+      ]
+    },
+    {
+      "entity_id": "p_020",
+      "type": "person",
+      "originals": [
+        "+57 318 877 8006",
+        "3188778006",
+        "Kelly",
+        "Kelly Castaño",
+        "Kelly Castaño Jiménez",
+        "U0DPFUL3A",
+        "kelly.castano",
+        "kelly.castano@kipupay.co",
+        "kelly_castano",
+        "kelly_castano_jimenez"
+      ],
+      "pseudonyms": {
+        "name": "Adriana Flores",
+        "email": "adriana.flores@kipupay.co"
+      },
+      "records": [
+        "sdoc_01"
+      ]
+    }
+  ]
+}

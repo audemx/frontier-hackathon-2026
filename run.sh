@@ -6,5 +6,9 @@ if [ -d ".venv" ]; then
     source .venv/bin/activate
 fi
 
-# Executes the main module inside a package named src as a script, forwarding any arguments passed to the shell wrapper ("$@") directly to Python.
-python3 -m src.main "$@"
+# Set host and port with defaults if not provided
+export HOST="${HOST:-0.0.0.0}"
+export PORT="${PORT:-8000}"
+
+echo "Starting FastAPI server on ${HOST}:${PORT}..."
+exec python3 -m uvicorn src.main:app --host "$HOST" --port "$PORT" "$@"
