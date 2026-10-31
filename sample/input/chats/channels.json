@@ -1,0 +1,36 @@
+[
+  {
+    "id": "C0450C201",
+    "name": "soporte-cobros",
+    "created": 1689340800,
+    "creator": "U05EFT6ED",
+    "is_archived": false,
+    "is_shared": true,
+    "members": [
+      "U017LQL38",
+      "U01Z5LJAD",
+      "U04G0BE4X",
+      "U04TXUTDX",
+      "U05EDSNEX",
+      "U07R7LALW",
+      "U0KPK9FYZ",
+      "U0MC2GAZJ",
+      "U0NB2029P",
+      "U0Q3ZQ7CX",
+      "U0T9BGCP7",
+      "U0UNWE1SR",
+      "U0V6WYVYG",
+      "U0VNAE92D"
+    ],
+    "topic": {
+      "value": "",
+      "creator": "",
+      "last_set": 0
+    },
+    "purpose": {
+      "value": "Tickets de cobros, débitos y cuotas",
+      "creator": "U05EFT6ED",
+      "last_set": 1700000000
+    }
+  }
+]

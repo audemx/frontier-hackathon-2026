@@ -1,0 +1,5 @@
+cliente_id;nombre_completo;tipo_doc;num_doc;correo;celular;ciudad;barrio;direccion;fecha_nacimiento;fecha_vinculacion;ocupacion;notas
+CL-19127;Nohora Salazar Ramírez;CC;32390356;nsalazar@gmail.com;3106128485;Medellín;Envigado;Calle 98 Bis # 91-10 of 406;1982-04-07;2022-02-22;community manager;Familiar de Manuela Castaño (CL-88627).
+CL-72856;Alejandra Castaño Mejía;CC;63263076;acastano@gmail.com;3133064112;Bucaramanga;Cabecera;Transversal 24 Bis # 91-97;1978-12-13;2021-06-08;administradora;Prefiere contacto por WhatsApp.
+CL-88627;Manuela Castaño Ruiz;CC;1107360039;mcastano@gmail.com;3148729552;Cali;Granada;Diagonal 3A # 78-6 apto 1501;1997-07-23;2025-08-21;fotógrafa;"Pago PSE aplicado con retraso en julio 2026; cobro retirado."
+CL-92356;Esteban Darío Castaño Ospina;CC;94184267;ecastano@gmail.com;3152371239;Cali;El Peñón;Tv 152B # 61-36 apto 802;1981-09-11;2022-03-16;mecánico;

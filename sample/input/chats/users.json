@@ -1,0 +1,1048 @@
+[
+  {
+    "id": "UKIPIBOT01",
+    "team_id": "T0KIPU0001",
+    "name": "kipi",
+    "real_name": "Kipi",
+    "is_bot": true,
+    "profile": {
+      "real_name": "Kipi",
+      "display_name": "Kipi",
+      "title": "Asistente virtual"
+    }
+  },
+  {
+    "id": "U05EFT6ED",
+    "team_id": "T0KIPU0001",
+    "name": "daniel.ruiz",
+    "real_name": "Daniel Ruiz Zapata",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Daniel Ruiz Zapata",
+      "display_name": "Dani",
+      "title": "CEO",
+      "email": "daniel.ruiz@kipupay.co",
+      "phone": "3131860913"
+    }
+  },
+  {
+    "id": "U0Z6HH756",
+    "team_id": "T0KIPU0001",
+    "name": "yamid.giraldo",
+    "real_name": "Yamid Giraldo Muñoz",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Yamid Giraldo Muñoz",
+      "display_name": "Yamid",
+      "title": "CTO",
+      "email": "yamid.giraldo@kipupay.co",
+      "phone": "3047034236"
+    }
+  },
+  {
+    "id": "U0YKJBAG9",
+    "team_id": "T0KIPU0001",
+    "name": "paola.castano",
+    "real_name": "Paola Castaño Castro",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Paola Castaño Castro",
+      "display_name": "Paola",
+      "title": "Gerente de Riesgo",
+      "email": "paola.castano@kipupay.co",
+      "phone": "3172808414"
+    }
+  },
+  {
+    "id": "U017LQL38",
+    "team_id": "T0KIPU0001",
+    "name": "silvia.ordonez",
+    "real_name": "Silvia Ordóñez Henao",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Silvia Ordóñez Henao",
+      "display_name": "Silvia",
+      "title": "Líder de Soporte",
+      "email": "silvia.ordonez@kipupay.co",
+      "phone": "3148620579"
+    }
+  },
+  {
+    "id": "U08N86R4G",
+    "team_id": "T0KIPU0001",
+    "name": "luis.santander",
+    "real_name": "Luis Santander",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Luis Santander",
+      "display_name": "Luis",
+      "title": "Coordinador de Fraude",
+      "email": "luis.santander@kipupay.co",
+      "phone": "3168770658"
+    }
+  },
+  {
+    "id": "U0QFBCJZG",
+    "team_id": "T0KIPU0001",
+    "name": "yesenia.ruiz",
+    "real_name": "Yesenia Ruiz Montoya",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Yesenia Ruiz Montoya",
+      "display_name": "Yesenia",
+      "title": "Analista de Fraude",
+      "email": "yesenia.ruiz@kipupay.co",
+      "phone": "3185020146"
+    }
+  },
+  {
+    "id": "U0VK2Y0WH",
+    "team_id": "T0KIPU0001",
+    "name": "esteban.castro",
+    "real_name": "Esteban Darío Castro Cardona",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Esteban Darío Castro Cardona",
+      "display_name": "Esteban Darío",
+      "title": "Analista de Fraude",
+      "email": "esteban.castro@kipupay.co",
+      "phone": "3501817414"
+    }
+  },
+  {
+    "id": "U0NB2029P",
+    "team_id": "T0KIPU0001",
+    "name": "yesenia.ramirez",
+    "real_name": "Yesenia Ramírez Zapata",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Yesenia Ramírez Zapata",
+      "display_name": "Yesenia",
+      "title": "Agente de Soporte",
+      "email": "yesenia.ramirez@kipupay.co",
+      "phone": "3026691564"
+    }
+  },
+  {
+    "id": "U0Q3ZQ7CX",
+    "team_id": "T0KIPU0001",
+    "name": "carlos.robledo",
+    "real_name": "Carlos Robledo Castro",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Carlos Robledo Castro",
+      "display_name": "Carlitos",
+      "title": "Agente de Soporte",
+      "email": "carlos.robledo@kipupay.co",
+      "phone": "3233143667"
+    }
+  },
+  {
+    "id": "U05EDSNEX",
+    "team_id": "T0KIPU0001",
+    "name": "renata.arango",
+    "real_name": "Renata Arango Montoya",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Renata Arango Montoya",
+      "display_name": "Renata",
+      "title": "Agente de Soporte",
+      "email": "renata.arango@kipupay.co",
+      "phone": "3153373441"
+    }
+  },
+  {
+    "id": "U0UNWE1SR",
+    "team_id": "T0KIPU0001",
+    "name": "andres.gomez",
+    "real_name": "Andrés Gómez",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Andrés Gómez",
+      "display_name": "Andre",
+      "title": "Agente de Soporte",
+      "email": "andres.gomez@kipupay.co",
+      "phone": "3150910317"
+    }
+  },
+  {
+    "id": "U01Z5LJAD",
+    "team_id": "T0KIPU0001",
+    "name": "luisa.diaz",
+    "real_name": "Luisa Díaz Gómez",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Luisa Díaz Gómez",
+      "display_name": "Lu",
+      "title": "Agente de Soporte",
+      "email": "luisa.diaz@kipupay.co",
+      "phone": "3170431039"
+    }
+  },
+  {
+    "id": "U03ZF488C",
+    "team_id": "T0KIPU0001",
+    "name": "julian.posada",
+    "real_name": "Julián Posada Aristizábal",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Julián Posada Aristizábal",
+      "display_name": "Juli",
+      "title": "Ingeniero de Datos",
+      "email": "julian.posada@kipupay.co",
+      "phone": "3174282116"
+    }
+  },
+  {
+    "id": "U08ZDJ7QC",
+    "team_id": "T0KIPU0001",
+    "name": "rosa.ruiz",
+    "real_name": "Rosa Ruiz López",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Rosa Ruiz López",
+      "display_name": "Rosa",
+      "title": "Abogada Senior",
+      "email": "rosa.ruiz@kipupay.co",
+      "phone": "3001913274"
+    }
+  },
+  {
+    "id": "U0T39SUPF",
+    "team_id": "T0KIPU0001",
+    "name": "luis.montoya",
+    "real_name": "Luis Felipe Montoya Hernández",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Luis Felipe Montoya Hernández",
+      "display_name": "Luis Felipe",
+      "title": "Gerente Comercial",
+      "email": "luis.montoya@kipupay.co",
+      "phone": "3159235972"
+    }
+  },
+  {
+    "id": "U0DPFUL3A",
+    "team_id": "T0KIPU0001",
+    "name": "kelly.castano",
+    "real_name": "Kelly Castaño Jiménez",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Kelly Castaño Jiménez",
+      "display_name": "Kelly",
+      "title": "Contadora",
+      "email": "kelly.castano@kipupay.co",
+      "phone": "3188778006"
+    }
+  },
+  {
+    "id": "U005CA13Q",
+    "team_id": "T0KIPU0001",
+    "name": "guillermo.osorio",
+    "real_name": "Guillermo Osorio Quintero",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Guillermo Osorio Quintero",
+      "display_name": "Guillermo",
+      "title": "Analista de Cobranza",
+      "email": "guillermo.osorio@kipupay.co",
+      "phone": "3123721178"
+    }
+  },
+  {
+    "id": "U05PLJEN6",
+    "team_id": "T0KIPU0001",
+    "name": "julieth.arango",
+    "real_name": "Julieth Arango Cardona",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Julieth Arango Cardona",
+      "display_name": "Julieth",
+      "title": "Product Manager",
+      "email": "julieth.arango@kipupay.co",
+      "phone": "3139321765"
+    }
+  },
+  {
+    "id": "U07R7LALW",
+    "team_id": "T0KIPU0001",
+    "name": "leonel.diaz",
+    "real_name": "Leonel Díaz Giraldo",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Leonel Díaz Giraldo",
+      "display_name": "Leonel",
+      "title": "Analista de Operaciones",
+      "email": "leonel.diaz@kipupay.co",
+      "phone": "3134646270"
+    }
+  },
+  {
+    "id": "U0MC2GAZJ",
+    "team_id": "T0KIPU0001",
+    "name": "fernanda.diaz",
+    "real_name": "Fernanda Díaz Salazar",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Fernanda Díaz Salazar",
+      "display_name": "Fernanda",
+      "title": "Agente de Soporte",
+      "email": "fernanda.diaz@kipupay.co",
+      "phone": "3170090518"
+    }
+  },
+  {
+    "id": "U04TXUTDX",
+    "team_id": "T0KIPU0001",
+    "name": "laura.ospina",
+    "real_name": "Laura Ospina",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Laura Ospina",
+      "display_name": "Laura",
+      "title": "Agente de Soporte",
+      "email": "laura.ospina@kipupay.co",
+      "phone": "3209907980"
+    }
+  },
+  {
+    "id": "U0T9BGCP7",
+    "team_id": "T0KIPU0001",
+    "name": "octavio.ospina",
+    "real_name": "Octavio Ospina Muñoz",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Octavio Ospina Muñoz",
+      "display_name": "Octavio",
+      "title": "Agente de Soporte",
+      "email": "octavio.ospina@kipupay.co",
+      "phone": "3214054462"
+    }
+  },
+  {
+    "id": "U04G0BE4X",
+    "team_id": "T0KIPU0001",
+    "name": "octavio.hernandez",
+    "real_name": "Octavio Hernández Díaz",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Octavio Hernández Díaz",
+      "display_name": "Octavio",
+      "title": "Agente de Soporte",
+      "email": "octavio.hernandez@kipupay.co",
+      "phone": "3015326100"
+    }
+  },
+  {
+    "id": "U0VNAE92D",
+    "team_id": "T0KIPU0001",
+    "name": "juana.vargas",
+    "real_name": "Juana Vargas Quintero",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Juana Vargas Quintero",
+      "display_name": "Juana",
+      "title": "Agente de Soporte",
+      "email": "juana.vargas@kipupay.co",
+      "phone": "3502724663"
+    }
+  },
+  {
+    "id": "U09C1DZX1",
+    "team_id": "T0KIPU0001",
+    "name": "elvira.lopez",
+    "real_name": "Elvira López Arango",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Elvira López Arango",
+      "display_name": "Elvira",
+      "title": "Analista de Fraude",
+      "email": "elvira.lopez@kipupay.co",
+      "phone": "3132950259"
+    }
+  },
+  {
+    "id": "U066VBRXQ",
+    "team_id": "T0KIPU0001",
+    "name": "sebastian.giraldo",
+    "real_name": "Sebastián Giraldo",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Sebastián Giraldo",
+      "display_name": "Sebas",
+      "title": "Analista de Datos",
+      "email": "sebastian.giraldo@kipupay.co",
+      "phone": "3168253605"
+    }
+  },
+  {
+    "id": "U0QFXWRWP",
+    "team_id": "T0KIPU0001",
+    "name": "hernando.arango",
+    "real_name": "Hernando Arango Salazar",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Hernando Arango Salazar",
+      "display_name": "Hernando",
+      "title": "Ingeniero de Software",
+      "email": "hernando.arango@kipupay.co",
+      "phone": "3224434002"
+    }
+  },
+  {
+    "id": "U08KN2HKL",
+    "team_id": "T0KIPU0001",
+    "name": "karen.posada",
+    "real_name": "Karen Posada Castro",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Karen Posada Castro",
+      "display_name": "Karen",
+      "title": "Ingeniera de Software",
+      "email": "karen.posada@kipupay.co",
+      "phone": "3208866750"
+    }
+  },
+  {
+    "id": "U0BXKRJFN",
+    "team_id": "T0KIPU0001",
+    "name": "lisandro.castro",
+    "real_name": "Lisandro Castro Díaz",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Lisandro Castro Díaz",
+      "display_name": "Lisandro",
+      "title": "Analista de Calidad",
+      "email": "lisandro.castro@kipupay.co",
+      "phone": "3162354204"
+    }
+  },
+  {
+    "id": "U0TQC1CL3",
+    "team_id": "T0KIPU0001",
+    "name": "uriel.sanchez",
+    "real_name": "Uriel Sánchez Rojas",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Uriel Sánchez Rojas",
+      "display_name": "Uriel",
+      "title": "Líder de Seguridad",
+      "email": "uriel.sanchez@kipupay.co",
+      "phone": "3186934783"
+    }
+  },
+  {
+    "id": "U0LK51PHU",
+    "team_id": "T0KIPU0001",
+    "name": "salome.posada",
+    "real_name": "Salomé Posada Mejía",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Salomé Posada Mejía",
+      "display_name": "Salomé",
+      "title": "Analista de Cobranza",
+      "email": "salome.posada@kipupay.co",
+      "phone": "3209501409"
+    }
+  },
+  {
+    "id": "U0C46NPZA",
+    "team_id": "T0KIPU0001",
+    "name": "pedro.castano",
+    "real_name": "Pedro Castaño Ramírez",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Pedro Castaño Ramírez",
+      "display_name": "Pedro",
+      "title": "Abogado Junior",
+      "email": "pedro.castano@kipupay.co",
+      "phone": "3217954281"
+    }
+  },
+  {
+    "id": "U0F2E4J88",
+    "team_id": "T0KIPU0001",
+    "name": "ivonne.vargas",
+    "real_name": "Ivonne Vargas Montoya",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Ivonne Vargas Montoya",
+      "display_name": "Ivonne",
+      "title": "Líder de Talento",
+      "email": "ivonne.vargas@kipupay.co",
+      "phone": "3161702264"
+    }
+  },
+  {
+    "id": "U0786CCEM",
+    "team_id": "T0KIPU0001",
+    "name": "david.diaz",
+    "real_name": "David Díaz Muñoz",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "David Díaz Muñoz",
+      "display_name": "David",
+      "title": "Líder de Marketing",
+      "email": "david.diaz@kipupay.co",
+      "phone": "3022590630"
+    }
+  },
+  {
+    "id": "U041VLEKV",
+    "team_id": "T0KIPU0001",
+    "name": "yamid.munoz",
+    "real_name": "Yamid Muñoz Mejía",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Yamid Muñoz Mejía",
+      "display_name": "Yamid",
+      "title": "Director Financiero",
+      "email": "yamid.munoz@kipupay.co",
+      "phone": "3233429903"
+    }
+  },
+  {
+    "id": "U0KPK9FYZ",
+    "team_id": "T0KIPU0001",
+    "name": "ofelia.velasquez",
+    "real_name": "Ofelia Velásquez Martínez",
+    "is_bot": false,
+    "is_restricted": false,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Ofelia Velásquez Martínez",
+      "display_name": "Ofelia",
+      "title": "Analista de Operaciones",
+      "email": "ofelia.velasquez@kipupay.co",
+      "phone": "3159575617"
+    }
+  },
+  {
+    "id": "U0A7RLW4P",
+    "team_id": "T0KIPU0001",
+    "name": "crestrepo",
+    "real_name": "Camila Restrepo Osorio",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Camila Restrepo Osorio",
+      "display_name": "Cami",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0X2T13W2",
+    "team_id": "T0KIPU0001",
+    "name": "carango",
+    "real_name": "Camila Arango",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Camila Arango",
+      "display_name": "Cami",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U04FT1U4H",
+    "team_id": "T0KIPU0001",
+    "name": "camila.arango",
+    "real_name": "Camila Arango",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Camila Arango",
+      "display_name": "Cami",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U05HFQEAG",
+    "team_id": "T0KIPU0001",
+    "name": "agomez",
+    "real_name": "Andrés Gómez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Andrés Gómez",
+      "display_name": "Andre",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U07MAL7QU",
+    "team_id": "T0KIPU0001",
+    "name": "dordonez",
+    "real_name": "Daniela Ordóñez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Daniela Ordóñez",
+      "display_name": "Dani",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U046RXZMH",
+    "team_id": "T0KIPU0001",
+    "name": "daniela.ordonez",
+    "real_name": "Daniela Ordóñez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Daniela Ordóñez",
+      "display_name": "Dani",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0R8DREXG",
+    "team_id": "T0KIPU0001",
+    "name": "lsantander",
+    "real_name": "Luis Santander",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Luis Santander",
+      "display_name": "Luis",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U02V5KXPF",
+    "team_id": "T0KIPU0001",
+    "name": "jbolivar",
+    "real_name": "Juan Pablo Bolívar Moreno",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Juan Pablo Bolívar Moreno",
+      "display_name": "Juanpa",
+      "title": "Cliente",
+      "email": "jbolivar@gmail.com"
+    }
+  },
+  {
+    "id": "U0MTRUB22",
+    "team_id": "T0KIPU0001",
+    "name": "mcarulla",
+    "real_name": "Mariana Carulla Giraldo",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Mariana Carulla Giraldo",
+      "display_name": "Mari",
+      "title": "Cliente",
+      "email": "mcarulla@hotmail.com"
+    }
+  },
+  {
+    "id": "U0XYMK92U",
+    "team_id": "T0KIPU0001",
+    "name": "deactivateduser",
+    "real_name": "",
+    "deleted": true,
+    "is_bot": false,
+    "profile": {
+      "real_name": "",
+      "display_name": "",
+      "email": ""
+    }
+  },
+  {
+    "id": "U02QDZXSE",
+    "team_id": "T0KIPU0001",
+    "name": "agalan",
+    "real_name": "Amalia Galán Martínez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Amalia Galán Martínez",
+      "display_name": "Amalia",
+      "title": "Cliente",
+      "email": "agalan@hotmail.com"
+    }
+  },
+  {
+    "id": "U0GGJN454",
+    "team_id": "T0KIPU0001",
+    "name": "acordoba",
+    "real_name": "Aníbal Córdoba Hoyos",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Aníbal Córdoba Hoyos",
+      "display_name": "Aníbal",
+      "title": "Cliente",
+      "email": "acordoba@gmail.com"
+    }
+  },
+  {
+    "id": "U0GFRGFZT",
+    "team_id": "T0KIPU0001",
+    "name": "fcastilla",
+    "real_name": "Felipe Castilla Ospina",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Felipe Castilla Ospina",
+      "display_name": "Pipe",
+      "title": "Cliente",
+      "email": "fcastilla@gmail.com"
+    }
+  },
+  {
+    "id": "U0U1RXSBF",
+    "team_id": "T0KIPU0001",
+    "name": "abetancur",
+    "real_name": "Ana Lucía Betancur Posada",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Ana Lucía Betancur Posada",
+      "display_name": "Anita",
+      "title": "Cliente",
+      "email": "abetancur@gmail.com"
+    }
+  },
+  {
+    "id": "U0U0BQNQ0",
+    "team_id": "T0KIPU0001",
+    "name": "jmejia",
+    "real_name": "Juliana Mejía",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Juliana Mejía",
+      "display_name": "Juli",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0K0WCZMQ",
+    "team_id": "T0KIPU0001",
+    "name": "juliana.mejia",
+    "real_name": "Juliana Mejía",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Juliana Mejía",
+      "display_name": "Juli",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0BUEUMJ2",
+    "team_id": "T0KIPU0001",
+    "name": "lospina",
+    "real_name": "Laura Ospina",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Laura Ospina",
+      "display_name": "Laura",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0NZVSLE5",
+    "team_id": "T0KIPU0001",
+    "name": "mhenao",
+    "real_name": "Mateo Henao",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Mateo Henao",
+      "display_name": "Mateo",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0P5NMPVS",
+    "team_id": "T0KIPU0001",
+    "name": "mateo.henao",
+    "real_name": "Mateo Henao",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Mateo Henao",
+      "display_name": "Mateo",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0HR5HFS0",
+    "team_id": "T0KIPU0001",
+    "name": "sgiraldo",
+    "real_name": "Sebastián Giraldo",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Sebastián Giraldo",
+      "display_name": "Sebas",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0V6WYVYG",
+    "team_id": "T0KIPU0001",
+    "name": "mcastano",
+    "real_name": "Manuela Castaño Ruiz",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Manuela Castaño Ruiz",
+      "display_name": "Manu",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U038D7A4F",
+    "team_id": "T0KIPU0001",
+    "name": "nsalazar",
+    "real_name": "Nohora Salazar Ramírez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Nohora Salazar Ramírez",
+      "display_name": "Nohora",
+      "title": "Cliente",
+      "email": "nsalazar@gmail.com"
+    }
+  },
+  {
+    "id": "U00SBZ0EZ",
+    "team_id": "T0KIPU0001",
+    "name": "ecastano",
+    "real_name": "Esteban Darío Castaño Ospina",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Esteban Darío Castaño Ospina",
+      "display_name": "Esteban Darío",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0AZ2N02X",
+    "team_id": "T0KIPU0001",
+    "name": "acastano",
+    "real_name": "Alejandra Castaño Mejía",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Alejandra Castaño Mejía",
+      "display_name": "Aleja",
+      "title": "Cliente",
+      "email": "acastano@gmail.com"
+    }
+  },
+  {
+    "id": "U0SDQLVE0",
+    "team_id": "T0KIPU0001",
+    "name": "rcorrea",
+    "real_name": "Rosa Correa Cardona",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Rosa Correa Cardona",
+      "display_name": "Rosa",
+      "title": "Cliente",
+      "email": "rcorrea@gmail.com"
+    }
+  },
+  {
+    "id": "U08W01BE3",
+    "team_id": "T0KIPU0001",
+    "name": "bdiaz",
+    "real_name": "Brayan Díaz Castro",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Brayan Díaz Castro",
+      "display_name": "Brayan",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0XDG9N81",
+    "team_id": "T0KIPU0001",
+    "name": "nagudelo",
+    "real_name": "Norberto Agudelo Jiménez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Norberto Agudelo Jiménez",
+      "display_name": "Norberto",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0Y8QT8J8",
+    "team_id": "T0KIPU0001",
+    "name": "alopez",
+    "real_name": "Amalia López Correa",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Amalia López Correa",
+      "display_name": "Amalia",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0NRQ6WHC",
+    "team_id": "T0KIPU0001",
+    "name": "dospina",
+    "real_name": "Dagoberto Ospina Gutiérrez",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Dagoberto Ospina Gutiérrez",
+      "display_name": "Dagoberto",
+      "title": "Cliente",
+      "email": "dospina@hotmail.com"
+    }
+  },
+  {
+    "id": "U04Z1SQM5",
+    "team_id": "T0KIPU0001",
+    "name": "nmarulanda",
+    "real_name": "Nicolás Andrés Marulanda Salazar",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Nicolás Andrés Marulanda Salazar",
+      "display_name": "Nicolás Andrés",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U0K0505NQ",
+    "team_id": "T0KIPU0001",
+    "name": "dcastano",
+    "real_name": "Dagoberto Castaño Correa",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Dagoberto Castaño Correa",
+      "display_name": "Dagoberto",
+      "title": "Cliente"
+    }
+  },
+  {
+    "id": "U03PVQMYZ",
+    "team_id": "T0KIPU0001",
+    "name": "dsanchez",
+    "real_name": "Diego Sánchez Salazar",
+    "is_bot": false,
+    "is_restricted": true,
+    "tz": "America/Bogota",
+    "profile": {
+      "real_name": "Diego Sánchez Salazar",
+      "display_name": "Diego",
+      "title": "Cliente",
+      "email": "dsanchez@gmail.com"
+    }
+  }
+]
