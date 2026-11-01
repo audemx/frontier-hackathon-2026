@@ -9,6 +9,7 @@ Implements all endpoints defined in participante.openapi.yaml:
 - GET /entities
 Both under root and under /v1 prefix.
 """
+from __future__ import annotations
 
 import datetime
 import json
@@ -121,6 +122,34 @@ def get_db():
     return conn
 
 
+def init_db():
+    """Asegura que la carpeta y la tabla 'jobs' existan siempre al arrancar."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    conn = get_db()
+    with conn:
+        conn.execute(
+            """
+            CREATE TABLE IF NOT EXISTS jobs (
+                job_id TEXT PRIMARY KEY,
+                status TEXT NOT NULL,
+                started_at TEXT,
+                finished_at TEXT,
+                chats_count INTEGER DEFAULT 0,
+                docs_count INTEGER DEFAULT 0,
+                tables_count INTEGER DEFAULT 0,
+                tokens_in INTEGER DEFAULT 0,
+                tokens_out INTEGER DEFAULT 0,
+                seconds REAL DEFAULT 0,
+                error TEXT
+            )
+            """
+        )
+
+
+# Ejecutar la inicialización de la tabla al cargar la aplicación
+init_db()
+
+
 def create_job(job_id: str):
     conn = get_db()
     now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -132,7 +161,6 @@ def create_job(job_id: str):
             """,
             (job_id, now_iso),
         )
-
 
 def update_job_running(job_id: str):
     conn = get_db()

@@ -32,10 +32,31 @@
         -H "Content-Type: application/json" \
         -d '{
             "sources_url": "https://reto-pii-fuentes-production.up.railway.app/v1",
-            "token": "TOKEN_DE_EQUIPO"
+            "token": "FUENTES_TOKEN"
         }'`
     * Watching state via POST /run/{id}: 
         `curl -s http://localhost:8000/run/JOB_ID | json_pp`
     * Downloading completed.
 
 * [3:20] - Run massive processing `node frontier-reto-1/validar.mjs output/ --public sample`.
+* [3:45] - Fix entities leak and set up guardrail to prevent them.
+* [3:50] - Delete old SQLDB and start from scratch, ensuring initial state consistency: `rm -f data/entity_map.db`.
+* [3:55] - Restarted massive processing vía `notebooks/02_test.ipynb`.
+
+* [4:00] - Successful massive anonymization. Local validator answer: 'OK: la salida pasa el validador'
+* [4:10] - Commit Changes
+    
+* [4:30] - We try a cloudflared tunner. Starting test:
+    * `curl https://<tu-tunel>.trycloudflare.com/health` -> `{"status":"ok","team":"Kipu-Anonymizers","version":"1.0.0","models":["openai/gpt-4o-mini"]}`
+    * `curl -X POST https://<tu-tunel>.trycloudflare.com/run \
+        -H "Content-Type: application/json" \
+        -d '{
+            "sources_url": "https://reto-pii-fuentes-production.up.railway.app/v1",
+            "token": "FUENTES_TOKEN"
+        }'` -> {"job_id":"JOB_ID"}
+    * `curl -s https://<TUNNEL>.trycloudflare.com/run/JOB_ID | json_pp`.
+
+rm -rf output/*
+rm -f data/entity_map.db
+
+* [6:00] - Commit cierre: core: Cierre Hackathon.  

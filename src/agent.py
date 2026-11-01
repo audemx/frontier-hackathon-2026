@@ -3,6 +3,7 @@
 Handles quasi-identifier generalization (occupation + neighborhood + year),
 contextual entity extraction, and homonym disambiguation.
 """
+from __future__ import annotations
 
 import json
 import logging
