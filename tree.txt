@@ -1,11 +1,17 @@
 .
 ├── data
+│   └── entity_map.db
 ├── docs
 │   ├── adrs
+│   ├── DECISIONS.md
+│   ├── diagram.md
+│   ├── implementation_resume.md
 │   ├── logs.md
 │   ├── peech.md
 │   ├── project.md
 │   ├── prompt_design.md
+│   ├── src
+│   │   └── pipeline.md
 │   └── system-design.md
 ├── frontier-reto-1
 │   ├── api
@@ -16,7 +22,14 @@
 │   └── validar.mjs
 ├── init.sh
 ├── notebooks
-│   └── 01_exploracion.ipynb
+│   ├── 01_exploracion.ipynb
+│   └── 02_test.ipynb
+├── output
+│   ├── chats.jsonl
+│   ├── docs.jsonl
+│   ├── entities.json
+│   └── tables.jsonl
+├── Procfile
 ├── README.md
 ├── requirements.txt
 ├── run.sh
@@ -46,11 +59,18 @@
 │   ├── __init__.py
 │   ├── __pycache__
 │   │   ├── __init__.cpython-312.pyc
-│   │   └── main.cpython-312.pyc
+│   │   ├── __init__.cpython-314.pyc
+│   │   ├── agent.cpython-312.pyc
+│   │   ├── agent.cpython-314.pyc
+│   │   ├── config.cpython-312.pyc
+│   │   ├── config.cpython-314.pyc
+│   │   ├── main.cpython-312.pyc
+│   │   ├── pipeline.cpython-312.pyc
+│   │   └── pipeline.cpython-314.pyc
 │   ├── agent.py
 │   ├── config.py
 │   ├── main.py
 │   └── pipeline.py
 └── tree.txt
 
-16 directories, 38 files
+18 directories, 56 files

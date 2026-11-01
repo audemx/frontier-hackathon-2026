@@ -368,6 +368,18 @@ class EntityManager:
     def create_synthetic_profile(self, gender: str, idx: int) -> Dict[str, str]:
         name_pool = FEMALE_FIRST_NAMES if gender == "F" else MALE_FIRST_NAMES
 
+        # ✅ Obtener todos los originales registrados para evitar colisiones
+        cur = self.conn.cursor()
+        cur.execute("SELECT DISTINCT original_value FROM entity_originals WHERE val_type IN ('name', 'first_name')")
+        forbidden_tokens = set()
+        for row in cur.fetchall():
+            val = row["original_value"]
+            if val and len(val) >= 3:
+                # Registrar el valor completo Y cada token individual normalizado
+                forbidden_tokens.add(strip_accents(val.lower()))
+                tokens = strip_accents(val.lower()).split()
+                forbidden_tokens.update(tokens)
+
         attempts = 0
         while True:
             cur_idx = idx + attempts
@@ -379,16 +391,33 @@ class EntityManager:
 
             clean_first = strip_accents(first.split()[0]).lower()
             clean_last = strip_accents(last1).lower()
+            clean_full_first = strip_accents(first).lower()  # ✅ "sofia elena" completo
             u_name = f"{clean_first[0]}{clean_last}"
 
-            # Ensure collision-free against input tokens
-            if (
-                u_name not in self._reserved_raw_tokens
-                and clean_last not in self._reserved_raw_tokens
-                and short_name.lower() not in self._reserved_raw_tokens
-            ):
+            # ✅ Verificar que ningún token del seudónimo coincida con originales
+            collision = False
+            # Validar TODOS los tokens del nombre compuesto
+            all_tokens = clean_full_first.split() + [clean_last]
+            for token in all_tokens:
+                if token in self._reserved_raw_tokens or token in forbidden_tokens:
+                    collision = True
+                    break
+            
+            # Validar el nombre completo también
+            if strip_accents(short_name.lower()) in forbidden_tokens:
+                collision = True
+            
+            if not collision:
                 break
+            
             attempts += 1
+            if attempts > len(name_pool) * len(SYNTHETIC_SURNAMES):
+                # Si no se puede evitar colisión, usar índice numérico
+                first = f"Persona{idx:03d}"
+                last1 = "Anonima"
+                last2 = "Segura"
+                short_name = f"{first} {last1}"
+                break
 
         domain = DOMAINS[(idx * 3) % len(DOMAINS)]
         email = f"{u_name}@{domain}"
@@ -580,34 +609,48 @@ class EntityManager:
                     self.conn.execute("INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'username')", (eid, u_part.replace(".", "")))
             if phone:
                 clean_p = re.sub(r"\D", "", phone)
-                self.conn.execute(
-                    "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'phone')",
-                    (eid, phone.strip()),
-                )
+                variants_phone = {phone.strip()}
+                
                 if clean_p:
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'phone')",
-                        (eid, clean_p),
-                    )
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'phone')",
-                        (eid, format_colombian_phone(clean_p)),
-                    )
+                    variants_phone.add(clean_p)
+                    variants_phone.add(format_colombian_phone(clean_p))
+                    
+                    # ✅ Agregar variantes con guiones y espacios
+                    if len(clean_p) == 10:
+                        variants_phone.add(f"{clean_p[:3]}-{clean_p[3:6]}-{clean_p[6:]}")
+                        variants_phone.add(f"{clean_p[:3]} {clean_p[3:6]} {clean_p[6:]}")
+                        variants_phone.add(f"({clean_p[:3]}) {clean_p[3:6]}-{clean_p[6:]}")
+                    elif len(clean_p) == 12 and clean_p.startswith("57"):
+                        core = clean_p[2:]
+                        variants_phone.add(f"{core[:3]}-{core[3:6]}-{core[6:]}")
+                        variants_phone.add(f"+57 {core[:3]}-{core[3:6]}-{core[6:]}")
+                        variants_phone.add(f"+57{core[:3]}{core[3:6]}{core[6:]}")
+                
+                for v in variants_phone:
+                    if v:
+                        self.conn.execute(
+                            "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'phone')",
+                            (eid, v),
+                        )
             if cedula:
                 clean_c = re.sub(r"\D", "", cedula)
-                self.conn.execute(
-                    "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'cedula')",
-                    (eid, cedula.strip()),
-                )
+                variants_cedula = {cedula.strip()}
+                
                 if clean_c:
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'cedula')",
-                        (eid, clean_c),
-                    )
-                    self.conn.execute(
-                        "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'cedula')",
-                        (eid, format_cedula_with_dots(clean_c)),
-                    )
+                    variants_cedula.add(clean_c)
+                    variants_cedula.add(format_cedula_with_dots(clean_c))
+                    # ✅ Agregar variantes con prefijo CC
+                    variants_cedula.add(f"CC{clean_c}")
+                    variants_cedula.add(f"CC {clean_c}")
+                    variants_cedula.add(f"CC{format_cedula_with_dots(clean_c)}")
+                    variants_cedula.add(f"CC {format_cedula_with_dots(clean_c)}")
+                
+                for v in variants_cedula:
+                    if v:
+                        self.conn.execute(
+                            "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'cedula')",
+                            (eid, v),
+                        )
             if address:
                 self.conn.execute(
                     "INSERT OR IGNORE INTO entity_originals VALUES (?, ?, 'address')",
@@ -876,55 +919,7 @@ class AnonymizationEngine:
         if not text:
             return text
 
-        result = text 
-
-        # --- PARCHE DE EMERGENCIA DINÁMICO (Respeta la BD existente) ---
-        cur_emergency = self.em.conn.cursor()
-        cur_emergency.execute("SELECT entity_id, name, first_name, email, phone, cedula FROM entities WHERE kept = 0")
-        for row in cur_emergency.fetchall():
-            eid = row["entity_id"]
-            ent = self.em.get_entity(eid)
-            if not ent:
-                continue
-            
-            # 1. Blindaje de Nombre y Primer Nombre (Case-insensitive y sin tildes)
-            for raw_n in [row["name"], row["first_name"]]:
-                if raw_n and len(raw_n.strip()) >= 3:
-                    clean_n = strip_accents(raw_n.strip())
-                    pat = rf"(?i)\b{re.escape(clean_n)}\b"
-                    if re.search(pat, strip_accents(result)):
-                        pseud = ent["first_name"] if raw_n == row["first_name"] else ent["name"]
-                        result = re.sub(pat, pseud, result, flags=re.IGNORECASE)
-                        self.em.add_record(eid, record_id)
-
-            # 2. Blindaje de Teléfono
-            ph = row["phone"]
-            if ph:
-                ph_digits = re.sub(r"\D", "", ph)
-                if len(ph_digits) >= 7:
-                    core_ph = ph_digits[-10:]
-                    text_digits = re.sub(r"\D", "", result)
-                    if core_ph in text_digits or ph_digits in text_digits:
-                        synth_phone = format_colombian_phone(ent["phone"])
-                        result = result.replace(ph.strip(), synth_phone)
-                        result = result.replace(ph_digits, synth_phone)
-                        result = result.replace(core_ph, synth_phone)
-                        self.em.add_record(eid, record_id)
-
-            # 3. Blindaje de Cédula
-            cc = row["cedula"]
-            if cc:
-                cc_digits = re.sub(r"\D", "", cc)
-                if len(cc_digits) >= 6:
-                    text_digits = re.sub(r"\D", "", result)
-                    if cc_digits in text_digits:
-                        synth_cedula = format_cedula_with_dots(ent["cedula"])
-                        result = result.replace(cc.strip(), synth_cedula)
-                        result = result.replace(cc_digits, synth_cedula)
-                        dotted_cc = format_cedula_with_dots(cc_digits)
-                        result = result.replace(dotted_cc, synth_cedula)
-                        self.em.add_record(eid, record_id)
-        # -------------------------------------------------------------
+        result = text
 
         # Step 1: Pre-process spelled-out emails
         spelled_email_rx = re.compile(
@@ -1004,13 +999,28 @@ class AnonymizationEngine:
         for rx, vtype, eid, pseud_val, is_kept in self._compiled_matchers:
             if is_kept:
                 continue
-            if vtype not in ("slug", "name"):
-                continue
+            
+            # ✅ Procesar TODOS los tipos de PII, no solo slug/name
             if rx.search(anonymized_name):
-                slug = slugify_name(pseud_val)
-                anonymized_name = rx.sub(slug, anonymized_name)
+                if vtype == "cedula":
+                    ent = self.em.get_entity(eid)
+                    repl = ent["cedula"] if ent and ent.get("cedula") else pseud_val
+                elif vtype == "phone":
+                    ent = self.em.get_entity(eid)
+                    repl = ent["phone"] if ent and ent.get("phone") else pseud_val
+                elif vtype in ("slug", "name", "first_name"):
+                    repl = slugify_name(pseud_val)
+                elif vtype == "email":
+                    ent = self.em.get_entity(eid)
+                    email_val = ent["email"] if ent and ent.get("email") else pseud_val
+                    repl = slugify_name(email_val.split("@")[0])
+                else:
+                    repl = pseud_val
+                
+                anonymized_name = rx.sub(repl, anonymized_name)
                 self.em.add_record(eid, record_id)
-                self.em.mark_pseudonym_used(eid, "name")
+                field_name = vtype if vtype in {"email", "phone", "cedula", "address", "birth_iso", "plate"} else "name"
+                self.em.mark_pseudonym_used(eid, field_name)
 
         return f"{anonymized_name}{ext}"
 
